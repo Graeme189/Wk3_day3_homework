@@ -16,6 +16,11 @@ attr_reader :id, :name
          RETURNING id;"
    values = [@name]
    @id = SqlRunner.run(sql, values)[0]['id'].to_i
- end  
+ end
+
+ def self.delete_all()
+   sql = "DELETE FROM artists"
+   SqlRunner.run(sql)
+ end
 
 end
