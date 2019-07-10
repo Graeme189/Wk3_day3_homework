@@ -31,5 +31,11 @@ attr_reader :artist_id, :title, :genre, :id
     return album_list.map { |album| Album.new(album) }
   end
 
+  def artist()
+    sql = "SELECT * FROM artists
+    WHERE id = $1;"
+    values = [@artist_id]
+    return Artist.new (SqlRunner.run(sql, values).first)
+  end
 
-end
+  end
