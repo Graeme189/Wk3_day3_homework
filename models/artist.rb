@@ -53,4 +53,14 @@ attr_accessor :name
     SqlRunner.run(sql, values)
   end
 
+  def self.find(id)
+    sql = "SELECT FROM artists
+    WHERE id = $1;"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    artists_hash = results.first
+    artiste = Artist.new(artists_hash)
+    return artiste
+  end
+
 end
