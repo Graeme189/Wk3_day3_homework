@@ -6,5 +6,14 @@ artist1 = Artist.new({
   'name' => 'Miles Davis'})
 artist1.save
 
-binding.pry
-nil
+
+
+album1 = Album.new({
+  'title' => 'Kind of Blue',
+  'genre' => 'Jazz',
+  'artist_id' => artist1.id
+  })
+
+
+  binding.pry
+  nil
