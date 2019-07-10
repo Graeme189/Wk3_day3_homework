@@ -46,4 +46,11 @@ attr_reader :artist_id, :title, :genre, :id
     SqlRunner.run(sql, values)
   end
 
+  def delete()
+    sql = "DELETE FROM albums
+    WHERE title = $1;"
+    values = [@title]
+    SqlRunner.run(sql, values)
+  end
+
   end
