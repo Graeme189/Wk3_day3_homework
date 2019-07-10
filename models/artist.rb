@@ -23,4 +23,11 @@ attr_reader :id, :name
    SqlRunner.run(sql)
  end
 
+ def self.all()
+   sql = "SELECT * FROM artists"
+   artist_list = SqlRunner.run(sql)
+   return artist_list.map { |artist| Artist.new(artist) }
+ end
+
+
 end

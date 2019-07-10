@@ -5,7 +5,6 @@ require_relative("../models/artist")
 Album.delete_all()
 Artist.delete_all()
 
-
 artist1 = Artist.new({
   'name' => 'Miles Davis'})
 artist1.save
